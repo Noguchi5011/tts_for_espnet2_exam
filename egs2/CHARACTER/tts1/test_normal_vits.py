@@ -4,7 +4,7 @@ import torch
 import soundfile as sf
 
 fs, lang = 44100, "Japanese"
-model= "exp/tts_finetune_10epoch_transformer_tts_raw_phn_jaconv_pyopenjtalk_accent_with_pause/train.loss.ave.pth"
+model= "downloads/f3698edf589206588f58f5ec837fa516/exp/tts_train_vits_raw_phn_jaconv_pyopenjtalk_accent_with_pause/train.total_count.ave_10best.pth"
 
 text2speech = Text2Speech.from_pretrained(
     model_file=model,
@@ -26,4 +26,5 @@ print(f"RTF = {rtf:5f}")
 wavdata = wav.view(-1).cpu().numpy()
 samplerate=text2speech.fs
 
-sf.write('tansformer_tts_10_train.wav', wavdata, samplerate, subtype='PCM_24')
+sf.write('normal_vits_10_train.wav', wavdata, samplerate, subtype='PCM_24')
+
