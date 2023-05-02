@@ -62,9 +62,9 @@ fi
 
 if [ ${stage} -le 2 ] && [ ${stop_stage} -ge 2 ]; then
     log "stage 2: utils/subset_data_dir.sh"
-    utils/subset_data_dir.sh data/all 10 data/deveval
-    utils/subset_data_dir.sh --first data/deveval 5 "data/${dev_set}"
-    utils/subset_data_dir.sh --last data/deveval 5 "data/${eval_set}"
+    utils/subset_data_dir.sh data/all 2 data/deveval
+    utils/subset_data_dir.sh --first data/deveval 1 "data/${dev_set}"
+    utils/subset_data_dir.sh --last data/deveval 1 "data/${eval_set}"
     utils/copy_data_dir.sh data/all "data/${train_set}"
     utils/filter_scp.pl --exclude data/deveval/wav.scp \
         data/all/wav.scp > "data/${train_set}/wav.scp"
