@@ -1,5 +1,10 @@
 data/*
+!data/.gitkeep
 dataset/*
+!dataset/.gitkeep
 downloads/*
+!data/.gitkeep
 dump/*
+!dump/.gitkeep
 exp/*
+!exp/.gitkeep
